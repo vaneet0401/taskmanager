@@ -17,7 +17,7 @@ def get_db():
 
 @app.get("/")
 def frontend():
-    return {"message": "Welcome to the FastAPI Task Manager! Use /docs to explore the API."}
+    return {"message": "Welcome to the FastAPI Task Manager!"}
 
 @app.post("/tasks/", response_model=schemas.TaskResponse)
 def create_task(task: schemas.TaskCreate, db: Session = Depends(get_db)):
